@@ -10,11 +10,18 @@
 \chapter{Integration}
 The goal here is to integrate the area under $f(x)$ from when $x = 0$ until we
 reach $x = x_{end}$. What follows here is bunch of steps that shows my thinking
-process because shadodaemon asked for it (and also because I am happy now).
+process because \emph{shadowdaemon} asked for it (and also because I am happy now).
 
 \section{Areas of Lots of Extremely Tiny Rectangular Columns}
-So to integrate $f(x) = x^2$ we have to keep summing extremely skinny columns of, each of
-width $d$. 
+So to integrate $f(x) = x^2$ we have to keep summing extremely skinny
+columns\footnote{\textbf{Note:} \emph{fefelix} of \emph{freenode/\#gentoo-chat-exile} tried to
+look smart by attacking my rigor by saying that the term
+\emph{skinny columns} is wrong and that it must be replaced by the term
+\emph{infinitesimal} (Facepalm moment here). He also tried to look
+even smarter by using the phrase \emph{In the realm of $\mathbb{R}$}.
+Obviously, any half-assed mathematician knows that $\mathbb{R}$ has only a single
+infinitesimal which is zero. Yep, zero bitch.} of, each of
+width $d$.
 \[\begin{split}
   (x+d-x)(x)^2 + \\
   (x+2d-(x+d))(x+d)^2 + \\
@@ -30,6 +37,8 @@ width $d$.
   (x+11d-(x+10d))(x+10d)^2 + \\
   \ldots
 \end{split}\]
+
+
 
 You see, if $d$ is extremely tiny (near zero), then we will have to sum an
 infinite number of those tiny skinny areas. But for simplicity I put $\ldots$
