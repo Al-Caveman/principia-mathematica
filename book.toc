@@ -1,0 +1,5 @@
+\contentsline {chapter}{\numberline {1}Integration}{2}
+\contentsline {section}{\numberline {1.1}Areas of Lots of Extremely Tiny Rectangular Columns}{2}
+\contentsline {section}{\numberline {1.2}Approximating the Area}{4}
+\contentsline {section}{\numberline {1.3}The Precise Area Under The Bitch}{6}
+\contentsline {chapter}{\numberline {2}Differentiation}{7}

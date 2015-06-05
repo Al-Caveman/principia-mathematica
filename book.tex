@@ -1,0 +1,234 @@
+\documentclass{report}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\title{Principia Mathematica}
+\author{Al Caveman}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Integration}
+The goal here is to integrate the area under $f(x)$ from when $x = 0$ until we
+reach $x = x_{end}$. What follows here is bunch of steps that shows my thinking
+process because shadodaemon asked for it (and also because I am happy now).
+
+\section{Areas of Lots of Extremely Tiny Rectangular Columns}
+So to integrate $f(x) = x^2$ we have to keep summing extremely skinny columns of, each of
+width $d$. 
+\[\begin{split}
+  (x+d-x)(x)^2 + \\
+  (x+2d-(x+d))(x+d)^2 + \\
+  (x+3d-(x+2d))(x+2d)^2 + \\
+  (x+4d-(x+3d))(x+3d)^2 + \\
+  (x+5d-(x+4d))(x+4d)^2 + \\
+  (x+6d-(x+5d))(x+5d)^2 + \\
+  %
+  (x+7d-(x+6d))(x+6d)^2 + \\
+  (x+8d-(x+7d))(x+7d)^2 + \\
+  (x+9d-(x+8d))(x+8d)^2 + \\
+  (x+10d-(x+9d))(x+9d)^2 + \\
+  (x+11d-(x+10d))(x+10d)^2 + \\
+  \ldots
+\end{split}\]
+
+You see, if $d$ is extremely tiny (near zero), then we will have to sum an
+infinite number of those tiny skinny areas. But for simplicity I put $\ldots$
+instead.
+
+We can simplify things:
+\[\begin{split}
+  d(x)^2 + \\
+  d(x+d)^2 + \\
+  d(x+2d)^2 + \\
+  d(x+3d)^2 + \\
+  d(x+4d)^2 + \\
+  d(x+5d)^2 + \\
+  %
+  d(x+6d)^2 + \\
+  d(x+7d)^2 + \\
+  d(x+8d)^2 + \\
+  d(x+9d)^2 + \\
+  d(x+10d)^2 + \\
+  \ldots
+\end{split}\]
+
+Let's expand those squares:
+\[\begin{split}
+  d(x)(x) + \\
+  d(x+d)(x+d) + \\
+  d(x+2d)(x+2d) + \\
+  d(x+3d)(x+3d) + \\
+  d(x+4d)(x+4d) + \\
+  d(x+5d)(x+5d) + \\
+  %
+  d(x+6d)(x+6d) + \\
+  d(x+7d)(x+7d) + \\
+  d(x+8d)(x+8d) + \\
+  d(x+9d)(x+9d) + \\
+  d(x+10d)(x+10d) + \\
+  \ldots
+\end{split}\]
+
+Let's multiply them square bitches:
+\[\begin{split}
+  dx^2 + \\
+  d(x^2 + 2dx + d^2) + \\
+  d(x^2 + 4dx + 4d^2) + \\
+  d(x^2 + 6dx + 9d^2) + \\
+  d(x^2 + 8dx + 16d^2) + \\
+  d(x^2 + 10dx + 25x^2) + \\
+  %
+  d(x^2+12dx   +36d^2) + \\
+  d(x^2+14dx   +49d^2) + \\
+  d(x^2+16dx   +64d^2) + \\
+  d(x^2+18dx   +81d^2) + \\
+  d(x^2+20dx   +100d^2) + \\
+  \ldots
+\end{split}\]
+
+
+Let's now multiply those bitches with $d$ so that the shit gets spread even
+more:
+\[\begin{split}
+  dx^2 + \\
+  dx^2 + 2d^2x + d^3 + \\
+  dx^2 + 4d^2x + 4d^3 + \\
+  dx^2 + 6d^2x + 9d^3 + \\
+  dx^2 + 8d^2x + 16d^3 + \\
+  dx^2 + 10d^2x + 25x^3 + \\
+  %
+  dx^2+12d^2x   +36d^3 + \\
+  dx^2+14d^2x   +49d^3 + \\
+  dx^2+16d^2x   +64d^3 + \\
+  dx^2+18d^2x   +81d^3 + \\
+  dx^2+20d^2x   +100d^3 + \\
+  \ldots
+\end{split}\]
+
+\section{Approximating the Area}
+Now this is a critical point. Below is basically saying that each row is an
+approximation for the area under $f(x)$ from $x = 0$ till $x = x_{end}$. So the
+$1^{st}$ one is a shit approximation where were approximate the area under that
+curve by only one big fat column; so $d$ is so huge here, in fact $d =
+x_{end}$.
+
+Then, the 2nd line show a slightly less shit approximation where we approximate
+the area under the curve by two fat ass rectangular columns. So here $d =
+\frac{x_{end}}{2}$.
+
+So the approximation of the area under the curve gets more and more accurate in
+each line.
+\[\begin{split}
+  dx^2\\
+  2dx^2 + 2d^2x + d^3\\
+  3dx^2 + 6d^2x + 5d^3\\
+  4dx^2 + 12d^2x + 14d^3\\
+  5dx^2 + 20d^2x + 30d^3\\
+  6dx^2 + 30d^2x + 55d^3\\
+  7dx^2 + 42d^2x + 91d^3\\
+  8dx^2 + 56d^2x + 140d^3\\
+  9dx^2 + 72d^2x + 204d^3\\
+  10dx^2 + 90d^2x + 285d^3\\
+  11dx^2 + 110d^2x + 385d^3\\
+  %dx^2 + 2d^2x + d^3\\
+  %dx^2 + 4d^2x + 4d^3\\
+  %dx^2 + 6d^2x + 9d^3\\
+  %dx^2 + 8d^2x + 16d^3\\
+  %dx^2 + 10d^2x + 25x^3\\
+  %
+  %dx^2+12d^2x   +36d^3 + \\
+  %dx^2+14d^2x   +49d^3 + \\
+  %dx^2+16d^2x   +64d^3 + \\
+  %dx^2+18d^2x   +81d^3 + \\
+  %dx^2+20d^2x   +100d^3 + \\
+\end{split}\]
+
+So basically, you see there is a pattern. The coefficient of the $1^{st}$ term
+is easy peasy (just incrementing from 1 to $\infty$). The coefficient from the
+$2^{nd}$ term is kinda interesting, it follows the equation $(i^2+i)$ where $i$
+is the line number. Note that we start counting lines from 0. So the $1^{st}$
+has $i = 0$ and the $2^{nd}$ line has $i = 1$, etc. Finally, the last term is
+kinda cool, it follows the pattern $\frac{(i^2+i)(2i+1)}{6}$.
+
+Now you may ask, how did I find these patterns? Well these are well known
+number series. You can look them up in the On-Line Encyclopedia of Integer
+Sequences\footnote{http://oeis.org/}.
+
+So, the area under the curve of $f(x)$ from $x = 0$ up to $x_{end}$, by any
+$d$ (and its corresponding $i$) is:
+\[\begin{split}
+  dx^2  +  (i^2+i)d^2x   +  \frac{(i^2+i)(2i+1)}{6}d^3\\
+\end{split}\]
+
+Now we are almost done. We know that $x = 0$, so we can cancel a few terms:
+\begin{equation}\label{eq:dick}\begin{split}
+  d0^2  +  (i^2+i)d^20   +  \frac{(i^2+i)(2i+1)}{6}d^3\\
+  \frac{(i^2+i)(2i+1)}{6}d^3\\
+\end{split}\end{equation}
+
+Of course, we could've canceled those terms that multiply against zero earlier,
+but I didn't for random reasons. I just didn't. That's the randomness of life.
+But it's all mathematically correct as my caveman balls tell.
+
+You can code a simple script that you give it $x_{end}$ and $d$, by which it
+automatically finds $i = x_{end}/d$. You will notice that as $d$ gets smaller,
+you end up approaching some limit after which reduction in $d$ does not cause
+any change in the estimated area under the curve.
+
+\section{The Precise Area Under The Bitch}
+Now let's find the ultimate precision in the limit as $i \rightarrow
+\infty$ which also means that $d \rightarrow 0$. But how about not?
+Cause it's too hard to solve the limit when two variables are
+approaching different limits.
+
+To simplify the limits in an easier way, let's represent $i$ in terms of $d$
+and $x_{end}$ as follows $i = x_{end}/d$. Then the same equation would become
+as follows:
+\[\begin{split}
+  \frac{((x_{end}/d)^2+(x_{end}/d))(2(x_{end}/d)+1)}{6}d^3\\
+  \frac{(\frac{x_{end}^2}{d^2}+\frac{x_{end}}{d})(\frac{2x_{end}}{d}+1)}{6}d^3\\
+  \frac{(\frac{x_{end}^2}{d^2}+\frac{x_{end}}{d})(\frac{2x_{end}}{d}+1)}{6}d^3\\
+  \frac{\frac{1}{d}(\frac{x_{end}^2}{d}+x_{end})(\frac{2x_{end}}{d}+1)}{6}d^3\\
+  \frac{(\frac{x_{end}^2}{d}+x_{end})(\frac{2x_{end}}{d}+1)}{6}d^2\\
+  \frac{\frac{2x_{end}^3}{d^2} +  \frac{x_{end}^2}{d} +  \frac{2x_{end}^2}{d} + x_{end}}{6}d^2\\
+  \frac{\frac{2x_{end}^3d^2}{d^2} +  \frac{x_{end}^2d^2}{d} +  \frac{2x_{end}^2d^2}{d} + x_{end}d^2}{6}\\
+  \frac{2x_{end}^3 +  x_{end}^2d +  2x_{end}^2d + x_{end}d^2}{6}\\
+\end{split}\]
+
+Now, it's super easy. We have to find the limit of that equation as a single
+variable approaches 0 (we got rid of $i$). The equation becomes:
+\[\begin{split}
+  \frac{2x_{end}^3}{6}\\
+  \frac{x_{end}^3}{3}\\
+\end{split}\]
+
+That's it. Integration re-invented bitch :) --- $\frac{x_{end}^2}3$.
+
+Q.E. freaking DEE.
+
+
+\chapter{Differentiation}
+Here we want to find the slope of $f(x)$ at point $x$. This is easy so I won't
+say much here.
+
+Differentiate $x^2$.
+
+$\frac{f(x+d) - f(x)}{x + d - x}$
+
+$\frac{(x+d)^2 - x^2}{x + d - x}$
+
+$\frac{(x+d)^2 - x^2}{d}$
+
+$\frac{(x+d)(x+d) - x^2}{d}$
+
+$\frac{x^2 + xd + xd + d^2 - x^2}{d}$
+
+$\frac{x^2}{d} + \frac{2xd}{d} + \frac{d^2}{d} - \frac{x^2}{d}$
+
+$\frac{x^2}{d} + 2x + d - \frac{x^2}{d}$
+
+$2x + d$
+
+Now, as $d \rightarrow \infty$, it becomes $2x$. Done.
+
+\end{document}
