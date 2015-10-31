@@ -278,13 +278,8 @@ $2x + d$
 Now, as $d \rightarrow 0$, it becomes $2x$. Done.
 
 \section{Theorems}
-See, Gottfried Leibniz was nuts, he picked bad notations ($\frac{dy}{dx}$
-dafuqq!).  Others were even more nuts and picked worse notations. But having
-nutter nuts exist is no execuse for letting lesser nuts exist.  So I hereby fix
-all your problems by introducing the symbol $\diff$. That's it.  Easy. Just
-$\diff$.
-
-If $t, x, c$ are any numbers, except $c$ is just a natty number.
+My symbol for differentiation is $\diff$. That's it. Now, if $t, x, c$ are any
+numbers, except $c$ is just a non-zero natural number, then:
 \begin{theorem}
     $\diff tx^c = ctx^{c-1}$.
 \end{theorem}
@@ -315,4 +310,62 @@ need not explain. Just trust me that I am doing the right thing.
     OMG it's the Q.E.D. baby!
 \end{proof}
 
+
+\chapter{Multivariate Stuff}
+    \section{Functions that are sum of other linear functions}
+        Let's say that we got linear functions $b(n)$ and $c(m)$. By
+        definition, this means that:
+        \begin{equation}
+            b(n) = c_1 + w_1n
+        \end{equation}
+        \begin{equation}
+            c(m) = c_2 + w_2m
+        \end{equation}
+
+        \begin{theorem}
+            If $a(n, m) = b(n) + c(m)$, then $\lim_{(n,m) \rightarrow (x,y)} a(n,
+            m) = \lim_{n \rightarrow x} b(n) + \lim_{m \rightarrow y} c(m)$
+        \end{theorem}
+
+        \begin{proof}
+            Limits of $b$ and $c$:
+            \begin{equation}
+                \begin{split}
+                    \lim_{n \rightarrow x} b(n) =& \lim_{n \rightarrow x} c_1 +
+                    w_1n\\
+                    =& c_1 + w_1x\\
+                \end{split}
+            \end{equation}
+            \begin{equation}
+                \begin{split}
+                    \lim_{m \rightarrow y} c(m) =& \lim_{n \rightarrow y} c_2 +
+                    w_2m\\
+                    =& c_2 + w_2y\\
+                \end{split}
+            \end{equation}
+
+            Limit of $a$ by theorem:
+            \begin{equation}
+                \begin{split}
+                    \lim_{(n,m) \rightarrow (x,y)} a(n, m) &= c_1 + w_1x + c_2 + w_2y\\
+                \end{split}
+            \end{equation}
+            
+            By substitution we get expanded $a$:
+            \begin{equation}
+                a(n, m) = c_1 + w_1n + c_2 + w_2m
+            \end{equation}
+
+            Limit of expanded $a$:
+            \begin{equation}
+                \begin{split}
+                    \lim_{(n,m) \rightarrow (x,y)} a(n, m) &= \lim_{(n,m)
+                    \rightarrow (x,y)} c_1 + w_1n + c_2 + w_2m\\
+                    &= c_1 + w_1x + c_2 + w_2y\\
+                \end{split}
+            \end{equation}
+
+            Guess wat, limit of expanded $a$ is the same as the original one.
+            Who could've thought?
+        \end{proof}
 \end{document}

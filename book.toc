@@ -5,3 +5,5 @@
 \contentsline {section}{\numberline {1.4}Generalizing That}{7}
 \contentsline {chapter}{\numberline {2}Differentiation}{9}
 \contentsline {section}{\numberline {2.1}Theorems}{9}
+\contentsline {chapter}{\numberline {3}Multivariate Stuff}{11}
+\contentsline {section}{\numberline {3.1}Functions that are sum of other linear functions}{11}
