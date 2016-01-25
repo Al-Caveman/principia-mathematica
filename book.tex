@@ -3,6 +3,10 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \newtheorem{theorem}{Theorem}
+\DeclareMathOperator{\maxn}{maxnum}
+\DeclareMathOperator{\minm}{minnum} \DeclareMathOperator{\maxnum}{MAX\_NUM}
+\DeclareMathOperator{\minnum}{MIN\_NUM}
+\DeclareMathOperator{\unimass}{UNIVERSE\_MASS}
 \DeclareMathOperator{\diff}{diff}
 \title{\Huge\sc \textbf{PHILOSOPHI\AE}\\ NATURALIS\\ \textbf{PRINCIPIA}\\ MATHEMATICA}
 \author{Al Caveman}
@@ -10,35 +14,71 @@
 \maketitle
 \tableofcontents
 
-\chapter{Preliminaries Because You Are an Idiot}
-\textbf{NOTE: THIS CHAPTER IS PROBABLY WRONG I WILL FIX ONE DAY}
+\chapter{What are numbers}
+There are 4 number sets, insane $\mathbb{I}$, less insane $\mathbb{L}$, sane
+$\mathbb{S}$ and more sane $\mathbb{M}$. We use insane and less insane
+numbers only to define sane and more sane numbers. Then we never use those
+insane numbers any more.
 
-There seems to be a book written on fundamentals of geometry by some guy named Hiblert something, that might have a different view. Who cares.
+In other words, we need insanity to define sanity, but once we have sanity then
+we are on roll and can never look back at our insane past (unless we become
+insane).
 
-\section{What is a Ruler}
-A stick with things on it that tell you how long other things are. This is called \emph{The Axiom of Ruler}.
+\section{Insane numbers ($\mathbb{I}$)}
+$\mathbb{I}$ is essentially what the powerful community of mathematicians names
+the set of real numbers $\mathbb{R}$. This community seem to have defined it in
+a way that it has no limits in many ways. They call it an infinitely
+uncountable set. Totally crazy, yet they call it \emph{real}. We call it
+\emph{insane} and use it briefly only to define two numbers after which we
+immediately jump back to our saner reality.
 
-\section{What is a Dot?}
-In a $d$-dimensional space, such as $\mathbb{R}^d$, a dot is a thing with these properties:
+Why do we need them? Only to define two numbers as follows:
 \begin{itemize}
-\item Its position in the space $\mathbb{R}^d$ is defined by the vector $(x_i, x_2, \ldots, x_d)$ where for any $1 \le i \le d$, $x_i \in \mathbb{R}$.
-\item If you look at the dot from the perspective of any specific dimension (e.g. $i=1,2, \ldots, d$), and put a ruler on the dot, you will see that its width $w_i$ is $0 < w_i < g$, where $g$ is any positive real number. Do you understand? It means the tiniest possible real number that is closest to 0 but not 0. Now go fuck yourself. In other words, a dot in $\mathbb{R}^d$ can be thought as a cube with $d$ faces. 
+\item I define that there is a function $f : \mathbb{I} \rightarrow \mathbb{I}$ that for
+any mass $m \in \mathbb{I}$, it returns the maximum number ever representable by $m$.
+Then I define $\maxnum = \maxn(\unimass)$, which is the largest number ever
+representable by the material universe. Self explanatory, no need for excess
+rigor.
+\item Likewise, $\minnum = \minm(\unimass)$ is the smallest number that is
+greater than zero ever representable by the material universe.
 \end{itemize}
 
-Some say that it is impossible to find $w_i$ such that for any positive g, $0 < w_i < g$. But I don't buy that. I think that there is, except that we cannot find it. There is a difference between something to not exist, and us not being able to find something. So I think the number exists, but we can't fine it. All we can do is define it as $w_i$.
+That's it. We don't need $\mathbb{I}$ for anything else (other than
+operations that apply on them, like addition, multiplication, etc)
 
-Why should $w_i$ be positive instead of just 0? Because we use dots to define lines, and volumes. If $w_i$ for any dimension $i$ is zero, then all lines/volumes are also 0. Dead-end. We have to make it positive, but smallest positive to permit maximum granularity.
+\section{Less insane numbers ($\mathbb{L}$)}
+$\mathbb{L}$ is essentially what the powerful community of mathematicians calls
+the set of natural numbers.
 
 
-\section{What is a Line?}
-A line is formed by putting a lot of dots next to each other, such that the gap between those lines is 0.
-
-Suppose that we demand to create a line such that if we measure its length by a ruler (using axiom of ruler), its width is $x$. How many dots are there? Let $w$ be dots width, and their quantity be $y$ such that:
+\section{Sane numbers ($\mathbb{S}$)}
+Welcome back to sanity:
 \[
-    x = wy
+    \mathbb{S} = \{i : i \in \mathbb{L}, -\maxnum \le i \le \maxnum\}
 \]
+where the impossible becomes possible:
+\begin{itemize}
+    \item Yes there is a maximum number: $\maxnum$.
+    \item Yes the cardinality of $\mathbb{S}$ is known: $|\mathbb{S}| = 1 +
+    2\maxnum$.
+\end{itemize}
 
-So there are $y$ many of them by definition. So $y = \frac{x}{w}$. We also know that by definition $w = 0$.
+
+\section{More sane numbers ($\mathbb{M}$)}
+Welcome to more sanity:
+\[
+    \mathbb{M} = \{i : i \in \mathbb{L}, -\maxnum \le i\minnum \le \maxnum\}
+\]
+where more impossible becomes possible:
+\begin{itemize}
+    \item Yes infinitesimals exist: $\minnum$ (also known as the universe pixel).
+    \item Yes there is a maximum number: $\maxnum$.
+    \item Yes there is a minimum number: $\minnum$.
+    \item Yes the cardinality of $\mathbb{M}$ is known: $|\mathbb{M}| = 1 +
+    2\frac{\maxnum}{\minnum}$.
+\end{itemize}
+
+
 
 \chapter{Integration}
 The goal here is to integrate the area under $f(x)$ from when $x = 0$ until we

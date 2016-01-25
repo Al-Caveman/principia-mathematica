@@ -1,7 +1,8 @@
-\contentsline {chapter}{\numberline {1}Preliminaries Because You Are an Idiot}{2}
-\contentsline {section}{\numberline {1.1}What is a Ruler}{2}
-\contentsline {section}{\numberline {1.2}What is a Dot?}{2}
-\contentsline {section}{\numberline {1.3}What is a Line?}{3}
+\contentsline {chapter}{\numberline {1}What are numbers}{2}
+\contentsline {section}{\numberline {1.1}Insane numbers ($\mathbb {I}$)}{2}
+\contentsline {section}{\numberline {1.2}Less insane numbers ($\mathbb {L}$)}{2}
+\contentsline {section}{\numberline {1.3}Sane numbers ($\mathbb {S}$)}{3}
+\contentsline {section}{\numberline {1.4}More sane numbers ($\mathbb {M}$)}{3}
 \contentsline {chapter}{\numberline {2}Integration}{4}
 \contentsline {section}{\numberline {2.1}Areas of Lots of Extremely Tiny Rectangular Columns}{5}
 \contentsline {section}{\numberline {2.2}Approximating the Area}{7}
